@@ -48,3 +48,20 @@ class StaticVariables
   # but you can also use Singleton module
   include Singleton
 end
+
+# duck typing (polymorphism) is happening out of the box, Ruby like JavaScript looks for a method
+# in lookup chain
+instances.each {|instance|
+  instance.some_method # doesnt matter what type is `instance`, only matters if it has `some_method`
+}
+
+# you can always refer to class in instance method using `self.class`
+class A
+  def self.a
+
+  end
+
+  def initialize
+    self.class.a # will execute static method `a`
+  end
+end

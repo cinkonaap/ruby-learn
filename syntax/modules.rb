@@ -30,3 +30,7 @@ class ModuledClassWithClassMethods
   extend ModuleA
   # self.class_method_b is accessible
 end
+
+# including or extending modules is also possible at runtime
+instance.include ModuleA
+instance.extend ModuleA
